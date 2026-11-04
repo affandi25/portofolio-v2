@@ -90,15 +90,18 @@ export default function Portofolio() {
       className="w-full bg-[#EAE8E4] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
-        {/* Section Header (GAZU "BEST OF GAZU / VIEW ALL" Style) */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-300 pb-6 mb-12 gap-4">
+        {/* Section Header */}
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between border-b border-neutral-300 pb-6 mb-12 gap-6" data-aos="fade-up" data-aos-duration="700">
           <div>
-            <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase font-semibold">
-              CURATED COLLECTION
+            <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase font-semibold block mb-1">
+              02 // CURATED COLLECTION
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-black uppercase mt-1">
-              SELECTED WORKS
+              Portfolio Showcase
             </h2>
+            <p className="text-sm sm:text-base text-neutral-600 mt-2 font-light max-w-2xl leading-relaxed">
+              Explore my journey through projects, certifications, and technical expertise. Each section represents a milestone in my continuous learning path.
+            </p>
           </div>
 
           {/* Minimalist Tab Navigation Bar */}

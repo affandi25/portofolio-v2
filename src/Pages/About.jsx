@@ -57,14 +57,17 @@ const AboutPage = () => {
     <section id="About" className="w-full bg-[#EAE8E4] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Editorial Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-300 pb-6 mb-16 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-300 pb-6 mb-16 gap-4" data-aos="fade-up" data-aos-duration="700">
           <div>
-            <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase font-semibold">
-              ABOUT THE DEVELOPER
+            <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase font-semibold block mb-1">
+              01 // BIOGRAPHY
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-black uppercase mt-1">
-              PROFILE & CRAFT
+              About Me
             </h2>
+            <p className="text-sm sm:text-base text-neutral-600 mt-2 font-light">
+              Transforming ideas into digital experiences
+            </p>
           </div>
           <span className="text-xs font-mono tracking-widest text-neutral-500 uppercase">
             SEMARANG, CENTRAL JAVA • ID
