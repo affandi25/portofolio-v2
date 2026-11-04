@@ -61,7 +61,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
                 INFORMATICS &amp; CREATIVE DEVELOPER
               </span>
               <h1 className="text-5xl sm:text-7xl md:text-8xl font-black tracking-tighter uppercase text-black">
-                YUSUF
+Portofolio
               </h1>
               <div className="w-12 h-1 bg-black mx-auto mt-4"></div>
             </motion.div>

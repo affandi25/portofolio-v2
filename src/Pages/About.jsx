@@ -70,9 +70,7 @@ const AboutPage = () => {
           {/* Left Column: Bio Narrative */}
           <div className="lg:col-span-7 space-y-6" data-aos="fade-right" data-aos-duration="800">
             <div>
-              <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase font-semibold">
-                BIOGRAPHY
-              </span>
+             
               <h3 className="text-3xl sm:text-4xl font-black tracking-tight text-black mt-1">
                 Muhammad Yusuf Affandi
               </h3>
