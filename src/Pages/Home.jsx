@@ -167,89 +167,97 @@ const Home = () => {
         </div>
       </section>
 
-      {/* THE 3-COLUMN BLACK ACCENT STRIP (PERSIS SEPERTI GAZU STRIP) */}
-      <section className="w-full bg-[#0D0D0D] text-white py-14 sm:py-20 border-t border-neutral-800">
+      {/* THE 3-COLUMN BLACK ACCENT STRIP (PERSIS SEPERTI GAZU STRIP: MEN / WOMEN / KIDS) */}
+      <section className="w-full bg-black text-white py-12 sm:py-16 border-t border-neutral-900 z-20 relative">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8 divide-y md:divide-y-0 md:divide-x divide-neutral-800">
-            {/* Column 1: Web Development */}
-            <div
-              className="pt-6 md:pt-0 md:px-6 first:pl-0 flex flex-col justify-between group"
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 divide-y md:divide-y-0 md:divide-x divide-neutral-900">
+            {/* Column 1: Web Apps / Projects (Mirip MEN) */}
+            <a
+              href="#Portofolio"
+              className="pt-6 md:pt-0 md:px-6 first:pl-0 flex items-center gap-5 group cursor-pointer"
               data-aos="fade-up"
-              data-aos-duration="800"
+              data-aos-duration="700"
             >
-              <div>
-                <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-400 uppercase">
-                  PILLAR 01
-                </span>
-                <h3 className="text-2xl font-bold tracking-tight text-white mt-2 group-hover:text-neutral-300 transition-colors">
+              <div className="relative w-20 sm:w-24 h-24 sm:h-28 flex-shrink-0 bg-neutral-950 overflow-hidden border border-neutral-800">
+                <img
+                  src="/Meta.png"
+                  alt="Web Projects"
+                  className="w-full h-full object-cover filter grayscale contrast-125 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                />
+                <div className="absolute inset-0 bg-black/25 group-hover:bg-transparent transition-colors"></div>
+              </div>
+              <div className="flex flex-col justify-center h-full py-1">
+                <h3 className="text-base sm:text-lg font-black tracking-wider text-white uppercase group-hover:text-neutral-300 transition-colors">
                   WEB APPS
                 </h3>
-                <p className="text-neutral-400 text-sm mt-2 leading-relaxed font-light">
-                  Membangun antarmuka modern dengan React, JavaScript, Node.js, dan Tailwind CSS yang responsif serta interaktif.
+                <p className="text-xs sm:text-sm text-neutral-400 mt-1 line-clamp-2 font-light leading-snug">
+                  Elevated everyday web applications & responsive solutions.
                 </p>
-              </div>
-              <a
-                href="#Portofolio"
-                className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-white mt-6 group-hover:translate-x-1 transition-transform"
-              >
-                <span>VIEW PROJECTS</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
-
-            {/* Column 2: IoT & Exploration */}
-            <div
-              className="pt-6 md:pt-0 md:px-6 flex flex-col justify-between group"
-              data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="150"
-            >
-              <div>
-                <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-400 uppercase">
-                  PILLAR 02
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase text-neutral-300 group-hover:text-white mt-3 group-hover:translate-x-1 transition-transform border-b border-neutral-700 pb-0.5 group-hover:border-white w-fit">
+                  <span>EXPLORE PROJECTS</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </span>
-                <h3 className="text-2xl font-bold tracking-tight text-white mt-2 group-hover:text-neutral-300 transition-colors">
-                  IOT EXPLORATION
-                </h3>
-                <p className="text-neutral-400 text-sm mt-2 leading-relaxed font-light">
-                  Mengeksplorasi integrasi perangkat keras cerdas, mikrokontroler, dan sistem telemetri data di sela waktu perkuliahan.
-                </p>
               </div>
-              <a
-                href="#About"
-                className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-white mt-6 group-hover:translate-x-1 transition-transform"
-              >
-                <span>READ JOURNEY</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
+            </a>
 
-            {/* Column 3: Credentials */}
-            <div
-              className="pt-6 md:pt-0 md:px-6 last:pr-0 flex flex-col justify-between group"
+            {/* Column 2: About Me (Mirip WOMEN) */}
+            <a
+              href="#About"
+              className="pt-6 md:pt-0 md:px-6 flex items-center gap-5 group cursor-pointer"
               data-aos="fade-up"
-              data-aos-duration="800"
-              data-aos-delay="300"
+              data-aos-duration="700"
+              data-aos-delay="100"
             >
-              <div>
-                <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-400 uppercase">
-                  PILLAR 03
-                </span>
-                <h3 className="text-2xl font-bold tracking-tight text-white mt-2 group-hover:text-neutral-300 transition-colors">
-                  ACADEMICS & CERTS
-                </h3>
-                <p className="text-neutral-400 text-sm mt-2 leading-relaxed font-light">
-                  Sertifikasi kompetensi resmi dan riwayat pembelajaran terstruktur di Teknik Informatika Universitas PGRI Semarang.
-                </p>
+              <div className="relative w-20 sm:w-24 h-24 sm:h-28 flex-shrink-0 bg-neutral-950 overflow-hidden border border-neutral-800">
+                <img
+                  src="/profilku.jpeg"
+                  alt="Muhammad Yusuf Affandi"
+                  className="w-full h-full object-cover filter grayscale contrast-110 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-500"
+                />
+                <div className="absolute inset-0 bg-black/25 group-hover:bg-transparent transition-colors"></div>
               </div>
-              <a
-                href="#Portofolio"
-                className="inline-flex items-center gap-2 text-xs font-semibold tracking-widest uppercase text-white mt-6 group-hover:translate-x-1 transition-transform"
-              >
-                <span>VIEW CERTIFICATES</span>
-                <ArrowRight className="w-3.5 h-3.5" />
-              </a>
-            </div>
+              <div className="flex flex-col justify-center h-full py-1">
+                <h3 className="text-base sm:text-lg font-black tracking-wider text-white uppercase group-hover:text-neutral-300 transition-colors">
+                  ABOUT ME
+                </h3>
+                <p className="text-xs sm:text-sm text-neutral-400 mt-1 line-clamp-2 font-light leading-snug">
+                  Informatics student at UPGRIS exploring code & IoT craft.
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase text-neutral-300 group-hover:text-white mt-3 group-hover:translate-x-1 transition-transform border-b border-neutral-700 pb-0.5 group-hover:border-white w-fit">
+                  <span>READ STORY</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </div>
+            </a>
+
+            {/* Column 3: Credentials & Certifications (Mirip KIDS) */}
+            <a
+              href="#Portofolio"
+              className="pt-6 md:pt-0 md:px-6 last:pr-0 flex items-center gap-5 group cursor-pointer"
+              data-aos="fade-up"
+              data-aos-duration="700"
+              data-aos-delay="200"
+            >
+              <div className="relative w-20 sm:w-24 h-24 sm:h-28 flex-shrink-0 bg-neutral-950 overflow-hidden border border-neutral-800 flex items-center justify-center">
+                <div className="w-full h-full bg-gradient-to-br from-neutral-800 via-neutral-900 to-black p-2 flex flex-col justify-center items-center text-center">
+                  <span className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase">UPGRIS</span>
+                  <span className="text-xs font-black tracking-wider text-white mt-1">CERTIFIED</span>
+                  <span className="text-[9px] text-neutral-500 mt-0.5 tracking-widest font-mono">2024–2026</span>
+                </div>
+              </div>
+              <div className="flex flex-col justify-center h-full py-1">
+                <h3 className="text-base sm:text-lg font-black tracking-wider text-white uppercase group-hover:text-neutral-300 transition-colors">
+                  CREDENTIALS
+                </h3>
+                <p className="text-xs sm:text-sm text-neutral-400 mt-1 line-clamp-2 font-light leading-snug">
+                  Official certifications and verified technical competencies.
+                </p>
+                <span className="inline-flex items-center gap-1.5 text-xs font-bold tracking-widest uppercase text-neutral-300 group-hover:text-white mt-3 group-hover:translate-x-1 transition-transform border-b border-neutral-700 pb-0.5 group-hover:border-white w-fit">
+                  <span>VIEW CERTS</span>
+                  <ArrowRight className="w-3.5 h-3.5" />
+                </span>
+              </div>
+            </a>
           </div>
         </div>
       </section>
