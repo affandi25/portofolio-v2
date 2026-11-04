@@ -117,12 +117,12 @@ const Home = () => {
           >
             <div className="relative group">
               <img
-                src="/hero-yusuf.jpg"
+                src="/hero-yusuf.png"
                 alt="Muhammad Yusuf Affandi"
-                className="h-[420px] sm:h-[540px] lg:h-[660px] w-auto object-contain mix-blend-multiply filter contrast-105 brightness-95 transform transition-transform duration-700 group-hover:scale-[1.02]"
+                className="h-[420px] sm:h-[540px] lg:h-[660px] w-auto object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.15)] transform transition-transform duration-700 group-hover:scale-[1.02]"
               />
               {/* Studio Ground Shadow */}
-              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[70%] h-5 bg-black/20 rounded-[100%] blur-md pointer-events-none"></div>
+              <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[70%] h-5 bg-black/25 rounded-[100%] blur-md pointer-events-none"></div>
             </div>
           </div>
         </div>
