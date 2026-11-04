@@ -95,7 +95,7 @@ const ProjectDetails = () => {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-[#F5F4F2] flex items-center justify-center">
+      <div className="min-h-screen bg-[#fbf9f5] flex items-center justify-center">
         <div className="text-center space-y-4">
           <div className="w-12 h-12 mx-auto border-2 border-black border-t-transparent rounded-full animate-spin" />
           <h2 className="text-sm font-mono uppercase tracking-widest text-black">
@@ -123,7 +123,7 @@ const ProjectDetails = () => {
         <link rel="canonical" href={projectUrl} />
       </Helmet>
 
-      <div className="min-h-screen bg-[#F5F4F2] text-[#0D0D0D] py-12 sm:py-20">
+      <div className="min-h-screen bg-[#fbf9f5] text-[#0D0D0D] py-12 sm:py-20">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
           {/* Back Navigation Bar */}
           <div className="flex items-center justify-between border-b border-neutral-300 pb-6 mb-12">

@@ -93,7 +93,7 @@ export default function Portofolio() {
   return (
     <section
       id="Portofolio"
-      className="w-full bg-[#F5F4F2] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300"
+      className="w-full bg-[#fbf9f5] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Section Header */}
