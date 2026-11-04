@@ -38,7 +38,7 @@ const WelcomeScreen = ({ onLoadingComplete }) => {
     <AnimatePresence>
       {isLoading && (
         <motion.div
-          className="fixed inset-0 z-50 bg-[#E1E0DD] text-[#0D0D0D] flex flex-col justify-between p-8 sm:p-12 overflow-hidden"
+          className="fixed inset-0 z-50 bg-[#eae8e3] text-[#0D0D0D] flex flex-col justify-between p-8 sm:p-12 overflow-hidden"
           initial={{ opacity: 1 }}
           exit="exit"
           variants={containerVariants}
