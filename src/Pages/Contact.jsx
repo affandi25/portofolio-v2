@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { Share2, User, Mail, MessageSquare, Send } from "lucide-react";
-import SocialLinks from "../components/SocialLinks";
+import { User, Mail, MessageSquare, Send, ArrowUpRight } from "lucide-react";
 import Komentar from "../components/Commentar";
 import Swal from "sweetalert2";
 import AOS from "aos";
 import "aos/dist/aos.css";
-
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -17,7 +15,8 @@ const ContactPage = () => {
 
   useEffect(() => {
     AOS.init({
-      once: false,
+      once: true,
+      offset: 20,
     });
   }, []);
 
@@ -36,11 +35,11 @@ const ContactPage = () => {
     const iframe = document.getElementById("hidden-iframe");
     iframe.onload = () => {
       Swal.fire({
-        title: 'Berhasil!',
-        text: 'Pesan Anda telah berhasil terkirim!',
-        icon: 'success',
-        confirmButtonColor: '#6366f1',
-        timer: 2000,
+        title: "Terkirim!",
+        text: "Pesan Anda telah berhasil dikirim ke Yusuf.",
+        icon: "success",
+        confirmButtonColor: "#0D0D0D",
+        timer: 2500,
         timerProgressBar: true,
       });
       setFormData({ name: "", email: "", message: "" });
@@ -52,54 +51,37 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="px-[5%] sm:px-[5%] lg:px-[10%] " >
-      <div className="text-center lg:mt-[5%] mt-10 mb-2 sm:px-0 px-[5%]">
-        <h2
-          data-aos="fade-down"
-          data-aos-duration="1000"
-          className="inline-block text-3xl md:text-5xl font-bold text-center mx-auto text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]"
-        >
-          <span
-            style={{
-              color: "#6366f1",
-              backgroundImage:
-                "linear-gradient(45deg, #6366f1 10%, #a855f7 93%)",
-              WebkitBackgroundClip: "text",
-              backgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Hubungi Saya
+    <section id="Contact" className="w-full bg-[#EAE8E4] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300">
+      <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
+        {/* Editorial Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-300 pb-6 mb-16 gap-4">
+          <div>
+            <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase font-semibold">
+              COMMUNICATION CHANNEL
+            </span>
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-black uppercase mt-1">
+              GET IN TOUCH
+            </h2>
+          </div>
+          <span className="text-xs font-mono tracking-widest text-neutral-500 uppercase">
+            RESPONSE TIME &lt; 24 HOURS
           </span>
-        </h2>
-        <p
-          data-aos="fade-up"
-          data-aos-duration="1100"
-          className="text-slate-400 max-w-2xl mx-auto text-sm md:text-base mt-2"
-        >
-          Punya pertanyaan? Kirimi saya pesan, dan saya akan segera membalasnya.
-        </p>
-      </div>
+        </div>
 
-      <div
-        className="h-auto py-10 flex items-center justify-center 2xl:pr-[3.1%] lg:pr-[3.8%]  md:px-0"
-        id="Contact"
-      >
-        <div className="container px-[1%] grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-[45%_55%] 2xl:grid-cols-[35%_65%] gap-12" >
+        {/* 2-Column Layout: Contact Form on Left, Guestbook Comments on Right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Direct Message Form */}
           <div
-        
-            className="bg-white/5 backdrop-blur-xl rounded-3xl shadow-2xl p-5 py-10 sm:p-10 transform transition-all duration-500 hover:shadow-[#6366f1]/10"
+            className="lg:col-span-5 bg-white border border-neutral-300 p-8 sm:p-10"
+            data-aos="fade-up"
+            data-aos-duration="700"
           >
-            <div className="flex justify-between items-start mb-8">
-              <div>
-                <h2 className="text-4xl font-bold mb-3 text-transparent bg-clip-text bg-gradient-to-r from-[#6366f1] to-[#a855f7]">
-                  Hubungi
-                </h2>
-                <p className="text-gray-400">
-                  Ada yang ingin didiskusikan? Kirim saya pesan dan mari kita bicara.
-                </p>
-              </div>
-              <Share2 className="w-10 h-10 text-[#6366f1] opacity-50" />
+            <div className="mb-8">
+              <span className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase">DIRECT DISPATCH</span>
+              <h3 className="text-2xl font-black tracking-tight text-black mt-1">SEND A MESSAGE</h3>
+              <p className="text-xs text-neutral-500 mt-1 leading-relaxed">
+                Punya pertanyaan atau tawaran kolaborasi? Kirimkan pesan melalui form ini.
+              </p>
             </div>
 
             <iframe name="hidden-iframe" id="hidden-iframe" style={{ display: "none" }} title="hidden"></iframe>
@@ -108,85 +90,113 @@ const ContactPage = () => {
               action="https://formsubmit.co/m.yusufaffandi76@gmail.com"
               method="POST"
               target="hidden-iframe"
-              className="space-y-6"
+              className="space-y-5"
             >
-              <input type="hidden" name="_subject" value="Pesan Baru dari Website Portfolio" />
+              <input type="hidden" name="_subject" value="Pesan Baru dari Website Portfolio Muhammad Yusuf Affandi" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_next" value="https://portofolio-aqro.vercel.app" />
-              <div
-                data-aos="fade-up"
-                data-aos-delay="100"
-                className="relative group"
-              >
-                <User className="absolute left-4 top-4 w-5 h-5 text-gray-400 group-focus-within:text-[#6366f1] transition-colors" />
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Nama Anda"
-                  value={formData.name}
-                  onChange={handleChange}
-                  disabled={isSubmitting}
-                  className="w-full p-4 pl-12 bg-white/10 rounded-xl border border-white/20 placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-[#6366f1]/30 transition-all duration-300 hover:border-[#6366f1]/30 disabled:opacity-50"
-                  required
-                />
+
+              <div>
+                <label className="block text-xs font-mono uppercase tracking-wider text-black font-semibold mb-1.5">
+                  YOUR NAME <span className="text-red-500">*</span>
+                </label>
+                <div className="relative">
+                  <User className="absolute left-3.5 top-3.5 w-4 h-4 text-neutral-400" />
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="e.g. John Doe"
+                    value={formData.name}
+                    onChange={handleChange}
+                    disabled={isSubmitting}
+                    className="w-full py-3 pl-10 pr-4 bg-[#EAE8E4] border border-neutral-300 text-black text-sm placeholder-neutral-400 focus:outline-none focus:border-black transition-colors"
+                    required
+                  />
+                </div>
               </div>
-              <div
-                data-aos="fade-up"
-                data-aos-delay="200"
-                className="relative group"
-              >
-                <Mail className="absolute left-4 top-4 w-5 h-5 text-gray-400 group-focus-within:text-[#6366f1] transition-colors" />
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="Email Anda"
-                  value={formData.email}
-                  onChange={handleChange}
-                  disabled={isSubmitting}
-                  className="w-full p-4 pl-12 bg-white/10 rounded-xl border border-white/20 placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-[#6366f1]/30 transition-all duration-300 hover:border-[#6366f1]/30 disabled:opacity-50"
-                  required
-                />
+
+              <div>
+                <label className="block text-xs font-mono uppercase tracking-wider text-black font-semibold mb-1.5">
+                  EMAIL ADDRESS <span className="text-red-500">*</span>
+                </label>
+                <div className="relative">
+                  <Mail className="absolute left-3.5 top-3.5 w-4 h-4 text-neutral-400" />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="e.g. john@example.com"
+                    value={formData.email}
+                    onChange={handleChange}
+                    disabled={isSubmitting}
+                    className="w-full py-3 pl-10 pr-4 bg-[#EAE8E4] border border-neutral-300 text-black text-sm placeholder-neutral-400 focus:outline-none focus:border-black transition-colors"
+                    required
+                  />
+                </div>
               </div>
-              <div
-                data-aos="fade-up"
-                data-aos-delay="300"
-                className="relative group"
-              >
-                <MessageSquare className="absolute left-4 top-4 w-5 h-5 text-gray-400 group-focus-within:text-[#6366f1] transition-colors" />
-                <textarea
-                  name="message"
-                  placeholder="Pesan Anda"
-                  value={formData.message}
-                  onChange={handleChange}
-                  disabled={isSubmitting}
-                  className="w-full resize-none p-4 pl-12 bg-white/10 rounded-xl border border-white/20 placeholder-gray-500 text-white focus:outline-none focus:ring-2 focus:ring-[#6366f1]/30 transition-all duration-300 hover:border-[#6366f1]/30 h-[9.9rem] disabled:opacity-50"
-                  required
-                />
+
+              <div>
+                <label className="block text-xs font-mono uppercase tracking-wider text-black font-semibold mb-1.5">
+                  MESSAGE <span className="text-red-500">*</span>
+                </label>
+                <div className="relative">
+                  <MessageSquare className="absolute left-3.5 top-3.5 w-4 h-4 text-neutral-400" />
+                  <textarea
+                    name="message"
+                    placeholder="Tuliskan pesan atau ide kolaborasi..."
+                    value={formData.message}
+                    onChange={handleChange}
+                    disabled={isSubmitting}
+                    rows={4}
+                    className="w-full py-3 pl-10 pr-4 bg-[#EAE8E4] border border-neutral-300 text-black text-sm placeholder-neutral-400 focus:outline-none focus:border-black transition-colors resize-none"
+                    required
+                  />
+                </div>
               </div>
+
               <button
-                data-aos="fade-up"
-                data-aos-delay="400"
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-[#6366f1] to-[#a855f7] text-white py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-[#6366f1]/20 active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full py-4 bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-bold tracking-[0.2em] uppercase flex items-center justify-center gap-2 disabled:opacity-50"
               >
-                <Send className="w-5 h-5" />
-                {isSubmitting ? 'Mengirim...' : 'Kirim Pesan'}
+                <Send className="w-4 h-4" />
+                <span>{isSubmitting ? "TRANSMITTING..." : "SEND MESSAGE"}</span>
               </button>
             </form>
 
-            <div className="mt-10 pt-6 border-t border-white/10 flex justify-center space-x-6">
-              <SocialLinks />
+            <div className="mt-8 pt-6 border-t border-neutral-200 text-center">
+              <span className="text-[11px] font-mono text-neutral-500 uppercase block mb-1">DIRECT INBOX</span>
+              <a
+                href="mailto:m.yusufaffandi76@gmail.com"
+                className="text-xs font-mono font-bold text-black underline tracking-wider"
+              >
+                m.yusufaffandi76@gmail.com
+              </a>
             </div>
           </div>
 
-          <div className="  bg-white/5 backdrop-blur-xl rounded-3xl p-3 py-3 md:p-10 md:py-8 shadow-2xl transform transition-all duration-500 hover:shadow-[#6366f1]/10">
+          {/* Right Column: Live Guestbook & Comments */}
+          <div
+            className="lg:col-span-7 bg-white border border-neutral-300 p-8 sm:p-10"
+            data-aos="fade-up"
+            data-aos-duration="700"
+            data-aos-delay="150"
+          >
+            <div className="mb-6 pb-4 border-b border-neutral-200 flex justify-between items-center">
+              <div>
+                <span className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase">COMMUNITY</span>
+                <h3 className="text-2xl font-black tracking-tight text-black mt-0.5">GUESTBOOK</h3>
+              </div>
+              <span className="text-[10px] font-mono tracking-widest text-neutral-400 uppercase">
+                SUPABASE LIVE
+              </span>
+            </div>
+
             <Komentar />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
