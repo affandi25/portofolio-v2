@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ExternalLink, ArrowRight, Heart } from "lucide-react";
+import { ExternalLink, ArrowRight } from "lucide-react";
 import { toSlug } from "../utils/slug";
 
 const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
@@ -19,9 +19,9 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
   };
 
   return (
-    <div className="group relative w-full bg-white border border-neutral-300 hover:border-black transition-all duration-300 flex flex-col justify-between">
+    <div className="group relative w-full bg-white border border-black hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 flex flex-col justify-between">
       {/* Top Image Container */}
-      <div className="relative overflow-hidden aspect-[16/10] bg-neutral-100 border-b border-neutral-200">
+      <div className="relative overflow-hidden aspect-[16/10] bg-neutral-100 border-b border-black">
         <img
           src={Img}
           alt={Title}
@@ -30,11 +30,6 @@ const CardProject = ({ Img, Title, Description, Link: ProjectLink, id }) => {
             e.target.style.display = "none";
           }}
         />
-
-        {/* Minimal Bookmark / Tag Icon in Corner (like GAZU heart icon) */}
-        <div className="absolute top-3 right-3 p-1.5 bg-white/90 backdrop-blur-sm border border-neutral-200 text-neutral-800">
-          <Heart className="w-4 h-4 text-neutral-600 group-hover:text-black transition-colors" />
-        </div>
       </div>
 
       {/* Content Area */}

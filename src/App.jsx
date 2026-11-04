@@ -8,6 +8,8 @@ import About from "./Pages/About";
 import AnimatedBackground from "./components/Background";
 import { AnimatePresence } from "framer-motion";
 import Footer from "./components/Footer";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import Login from "./Pages/Login";
 import Dashboard from "./Pages/Dashboard";
@@ -20,6 +22,22 @@ const WelcomeScreen = lazy(() => import("./Pages/WelcomeScreen"));
 const NotFoundPage = lazy(() => import("./Pages/404"));
 
 const LandingPage = ({ showWelcome, setShowWelcome }) => {
+  // Re-index all AOS elements once WelcomeScreen completes
+  React.useEffect(() => {
+    if (!showWelcome) {
+      const t1 = setTimeout(() => {
+        AOS.refreshHard();
+      }, 150);
+      const t2 = setTimeout(() => {
+        AOS.refresh();
+      }, 500);
+      return () => {
+        clearTimeout(t1);
+        clearTimeout(t2);
+      };
+    }
+  }, [showWelcome]);
+
   return (
     <>
       <AnimatePresence mode="wait">
@@ -33,7 +51,6 @@ const LandingPage = ({ showWelcome, setShowWelcome }) => {
       {!showWelcome && (
         <>
           <Navbar />
-      
           <Home />
           <About />
           <Suspense fallback={<div className="h-20" />}>
@@ -57,14 +74,24 @@ const ProjectPageLayout = () => (
 );
 
 function App() {
+  React.useEffect(() => {
+    AOS.init({
+      once: false,
+      offset: 40,
+      duration: 600,
+      easing: "ease-out-cubic",
+      throttleDelay: 99,
+      debounceDelay: 50,
+      disableMutationObserver: false,
+    });
+  }, []);
   const [showWelcome, setShowWelcome] = useState(true);
 
   return (
-    
     <HelmetProvider>
       <div className="pointer-events-none">
-  <AnimatedBackground />
-</div>
+        <AnimatedBackground />
+      </div>
       <BrowserRouter>
         <Routes>
           {/* PUBLIC */}

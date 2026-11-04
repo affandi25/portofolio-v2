@@ -44,8 +44,9 @@ body {
 	background: #333333;
 }
 
-[data-aos] {
-	will-change: transform, opacity !important;
+/* Hardware accelerate animated elements without exhausting GPU memory */
+.aos-animate {
+	transform: translateZ(0);
 }
 
 /* Subtle studio paper texture or grid */

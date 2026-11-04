@@ -3,7 +3,7 @@ import { supabase } from "../supabase";
 import CardProject from "../components/CardProject";
 import TechStackIcon from "../components/TechStackIcon";
 import Certificate from "../components/Certificate";
-import { Code2, Award, Layers, ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -24,17 +24,11 @@ export default function Portofolio() {
   const [activeTab, setActiveTab] = useState(0);
   const [projects, setProjects] = useState([]);
   const [certificates, setCertificates] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const [showAllCertificates, setShowAllCertificates] = useState(false);
   const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
   const initialItems = isMobile ? 4 : 6;
-
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      offset: 20,
-    });
-  }, []);
 
   const fetchData = useCallback(async () => {
     try {
@@ -56,6 +50,8 @@ export default function Portofolio() {
       }
     } catch (error) {
       console.error("Error fetching data from Supabase:", error.message);
+    } finally {
+      setLoading(false);
     }
   }, []);
 
@@ -65,7 +61,9 @@ export default function Portofolio() {
 
     if (cachedProjects) {
       try {
-        setProjects(JSON.parse(cachedProjects));
+        const parsed = JSON.parse(cachedProjects);
+        setProjects(parsed);
+        if (parsed.length > 0) setLoading(false);
       } catch (e) {}
     }
     if (cachedCertificates) {
@@ -76,6 +74,14 @@ export default function Portofolio() {
 
     fetchData();
   }, [fetchData]);
+
+  // Trigger AOS refresh when data or active tab changes so newly mounted cards are indexed & displayed
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      AOS.refresh();
+    }, 120);
+    return () => clearTimeout(timer);
+  }, [projects, certificates, activeTab]);
 
   const displayedProjects = showAllProjects
     ? projects
@@ -142,24 +148,46 @@ export default function Portofolio() {
         {/* TAB 0: PROJECTS GRID */}
         {activeTab === 0 && (
           <div className="space-y-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {displayedProjects.map((project, index) => (
-                <div
-                  key={project.id || index}
-                  data-aos="fade-up"
-                  data-aos-duration="700"
-                  data-aos-delay={(index % 3) * 100}
-                >
-                  <CardProject
-                    Img={project.img}
-                    Title={project.title}
-                    Description={project.description}
-                    Link={project.link}
-                    id={project.id}
-                  />
-                </div>
-              ))}
-            </div>
+            {loading && projects.length === 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[1, 2, 3].map((n) => (
+                  <div
+                    key={n}
+                    className="w-full bg-white border border-black p-5 animate-pulse space-y-4"
+                  >
+                    <div className="aspect-[16/10] bg-neutral-200" />
+                    <div className="h-4 bg-neutral-200 w-3/4" />
+                    <div className="h-3 bg-neutral-200 w-full" />
+                    <div className="h-3 bg-neutral-200 w-1/2" />
+                  </div>
+                ))}
+              </div>
+            ) : projects.length === 0 ? (
+              <div className="text-center py-16 bg-white border border-black">
+                <p className="text-sm font-mono tracking-widest uppercase text-neutral-500">
+                  Tidak ada proyek yang ditemukan
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {displayedProjects.map((project, index) => (
+                  <div
+                    key={project.id || index}
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                    data-aos-delay={(index % 3) * 100}
+                  >
+                    <CardProject
+                      Img={project.img}
+                      Title={project.title}
+                      Description={project.description}
+                      Link={project.link}
+                      id={project.id}
+                    />
+                  </div>
+                ))}
+              </div>
+            )}
 
             {projects.length > initialItems && (
               <div className="flex justify-center pt-4">
@@ -182,19 +210,38 @@ export default function Portofolio() {
         {/* TAB 1: CERTIFICATES GRID */}
         {activeTab === 1 && (
           <div className="space-y-10">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {displayedCertificates.map((certificate, index) => (
-                <div
-                  key={certificate.id || index}
-                  data-aos="fade-up"
-                  data-aos-duration="700"
-                  data-aos-delay={(index % 3) * 100}
-                  className="bg-white p-3 border border-neutral-300 hover:border-black transition-colors"
-                >
-                  <Certificate ImgSertif={certificate.img} />
-                </div>
-              ))}
-            </div>
+            {loading && certificates.length === 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {[1, 2, 3].map((n) => (
+                  <div
+                    key={n}
+                    className="w-full bg-white border border-black p-5 animate-pulse space-y-4"
+                  >
+                    <div className="aspect-[4/3] bg-neutral-200" />
+                  </div>
+                ))}
+              </div>
+            ) : certificates.length === 0 ? (
+              <div className="text-center py-16 bg-white border border-black">
+                <p className="text-sm font-mono tracking-widest uppercase text-neutral-500">
+                  Tidak ada sertifikat yang ditemukan
+                </p>
+              </div>
+            ) : (
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                {displayedCertificates.map((certificate, index) => (
+                  <div
+                    key={certificate.id || index}
+                    data-aos="fade-up"
+                    data-aos-duration="600"
+                    data-aos-delay={(index % 3) * 100}
+                    className="bg-white p-3 border border-black hover:scale-[1.03] transition-all duration-300"
+                  >
+                    <Certificate ImgSertif={certificate.img} />
+                  </div>
+                ))}
+              </div>
+            )}
 
             {certificates.length > initialItems && (
               <div className="flex justify-center pt-4">
@@ -236,7 +283,7 @@ export default function Portofolio() {
                   data-aos="fade-up"
                   data-aos-duration="600"
                   data-aos-delay={index * 50}
-                  className="p-4 bg-[#EAE8E4] border border-neutral-300 flex flex-col items-center justify-center text-center group hover:border-black transition-colors"
+                  className="p-4 bg-[#EAE8E4] border border-black hover:scale-[1.03] flex flex-col items-center justify-center text-center group transition-all duration-300"
                 >
                   <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
                 </div>

@@ -13,12 +13,7 @@ const ContactPage = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      offset: 20,
-    });
-  }, []);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;

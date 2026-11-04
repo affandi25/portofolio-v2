@@ -3,7 +3,7 @@ import React from 'react';
 const TechStackIcon = ({ TechStackIcon, Language }) => {
   return (
     <div className="w-full flex flex-col items-center justify-center gap-3 p-4 cursor-pointer transition-transform duration-300 group-hover:-translate-y-1">
-      <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center p-2 bg-white border border-neutral-300 shadow-sm">
+      <div className="w-14 h-14 md:w-16 md:h-16 flex items-center justify-center p-2 bg-white border border-black shadow-sm transition-all duration-300 hover:scale-110 hover:shadow-lg">
         <img 
           src={TechStackIcon} 
           alt={`${Language} icon`} 

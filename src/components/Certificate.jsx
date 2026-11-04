@@ -22,11 +22,12 @@ const Certificate = ({ ImgSertif }) => {
 				sx={{
 					position: "relative",
 					overflow: "hidden",
-					borderRadius: 2,
+					borderRadius: 0,
+					border: "1px solid #000000",
 					boxShadow: "0 8px 16px rgba(0,0,0,0.1)",
 					transition: "all 0.3s cubic-bezier(0.4, 0, 0.2, 1)",
 					"&:hover": {
-						transform: "translateY(-5px)",
+						transform: "scale(1.03)",
 						boxShadow: "0 12px 24px rgba(0,0,0,0.2)",
 						"& .overlay": {
 							opacity: 1,

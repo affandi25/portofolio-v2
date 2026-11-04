@@ -9,7 +9,7 @@ const Comment = memo(({ comment, formatDate, index, isPinned = false }) => (
         className={`p-4 border transition-all ${
             isPinned 
                 ? 'bg-[#0D0D0D] text-white border-neutral-800' 
-                : 'bg-white text-black border-neutral-200 hover:border-black'
+                : 'bg-white text-black border-black hover:scale-[1.01] hover:shadow-md'
         }`}
     >
         {isPinned && (
@@ -222,7 +222,8 @@ const Komentar = () => {
 
     useEffect(() => {
         AOS.init({
-            once: true,
+            once: false,
+      mirror: true,
             duration: 800,
         });
     }, []);

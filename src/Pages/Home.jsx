@@ -15,12 +15,7 @@ const Home = () => {
   const [wordIndex, setWordIndex] = useState(0);
   const [charIndex, setCharIndex] = useState(0);
 
-  useEffect(() => {
-    AOS.init({
-      once: true,
-      offset: 20,
-    });
-  }, []);
+
 
   const handleTyping = useCallback(() => {
     if (isTyping) {

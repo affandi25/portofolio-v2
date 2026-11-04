@@ -14,8 +14,13 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
+    let ticking = false;
+
+    const updateScrollState = () => {
+      const scrollY = window.scrollY;
+      const isScrolled = scrollY > 20;
+      setScrolled((prev) => (prev !== isScrolled ? isScrolled : prev));
+
       const sections = navItems
         .map((item) => {
           const section = document.querySelector(item.href);
@@ -30,20 +35,28 @@ const Navbar = () => {
         })
         .filter(Boolean);
 
-      const currentPosition = window.scrollY;
       const active = sections.find(
         (section) =>
-          currentPosition >= section.offset &&
-          currentPosition < section.offset + section.height
+          scrollY >= section.offset &&
+          scrollY < section.offset + section.height
       );
 
       if (active) {
-        setActiveSection(active.id);
+        setActiveSection((prev) => (prev !== active.id ? active.id : prev));
+      }
+
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updateScrollState);
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    updateScrollState();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -118,8 +131,8 @@ const Navbar = () => {
             onClick={(e) => scrollToSection(e, "#Home")}
             className="text-2xl sm:text-3xl font-black tracking-tighter text-black uppercase select-none hover:opacity-80 transition-opacity"
           >
-            YUSUF
-          </a>
+          Portofolio          
+            </a>
 
           {/* Right: Actions */}
           <div className="hidden md:flex items-center space-x-5 text-xs font-medium tracking-wider">
