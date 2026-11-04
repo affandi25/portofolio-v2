@@ -84,7 +84,7 @@ const Navbar = () => {
   return (
     <header className="fixed w-full top-0 z-50 transition-all duration-300">
       {/* Top Editorial Micro Bar */}
-      <div className="hidden md:flex justify-between items-center px-6 sm:px-12 py-1.5 bg-[#0D0D0D] text-[#EAE8E4] text-[10px] font-mono tracking-widest uppercase">
+      <div className="hidden md:flex justify-between items-center px-6 sm:px-12 py-1.5 bg-[#0D0D0D] text-[#E1E0DD] text-[10px] font-mono tracking-widest uppercase">
         <span>MUHAMMAD YUSUF AFFANDI — INFORMATICS UPGRIS</span>
         <div className="flex items-center gap-4">
           <span className="inline-flex items-center gap-1.5">
@@ -99,8 +99,8 @@ const Navbar = () => {
       <nav
         className={`w-full transition-all duration-300 border-b ${
           scrolled
-            ? "bg-[#EAE8E4]/90 backdrop-blur-md border-neutral-300/80 shadow-sm"
-            : "bg-[#EAE8E4] border-neutral-300/60"
+            ? "bg-[#E1E0DD]/90 backdrop-blur-md border-neutral-300/80 shadow-sm"
+            : "bg-[#E1E0DD] border-neutral-300/60"
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 h-16 flex items-center justify-between">
@@ -180,7 +180,7 @@ const Navbar = () => {
 
       {/* Mobile Drawer */}
       {isOpen && (
-        <div className="md:hidden fixed inset-0 top-[65px] bg-[#EAE8E4] z-40 px-8 py-10 flex flex-col justify-between border-t border-neutral-300">
+        <div className="md:hidden fixed inset-0 top-[65px] bg-[#E1E0DD] z-40 px-8 py-10 flex flex-col justify-between border-t border-neutral-300">
           <div className="space-y-6">
             {navItems.map((item) => (
               <a

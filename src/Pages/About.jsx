@@ -45,7 +45,7 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <section id="About" className="w-full bg-[#EAE8E4] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300">
+    <section id="About" className="w-full bg-[#C6C5C3] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Editorial Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-300 pb-6 mb-16 gap-4" data-aos="fade-up" data-aos-duration="700">
@@ -91,7 +91,7 @@ const AboutPage = () => {
                 CORE PHILOSOPHY
               </div>
               <blockquote className="text-base sm:text-lg font-semibold text-black italic leading-snug">
-                "Continuous learning is not just a habit, but a pathway to create meaningful technological solutions."
+"Leveraging AI as a professional tool, not a replacement."
               </blockquote>
             </div>
 

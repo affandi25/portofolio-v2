@@ -57,7 +57,7 @@ const Home = () => {
       {/* HERO SECTION (GAZU EDITORIAL COMPOSITION) */}
       <section
         id="Home"
-        className="relative w-full min-h-[92vh] sm:min-h-screen bg-[#EAE8E4] pt-24 sm:pt-28 pb-12 flex flex-col justify-between overflow-hidden"
+        className="relative w-full min-h-[92vh] sm:min-h-screen bg-[#E1E0DD] pt-24 sm:pt-28 pb-12 flex flex-col justify-between overflow-hidden"
       >
         {/* Editorial Top Info Row */}
         <div className="w-full max-w-7xl mx-auto px-6 sm:px-10 lg:px-12 pt-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 z-20">

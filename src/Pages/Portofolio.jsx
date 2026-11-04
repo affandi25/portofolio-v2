@@ -93,7 +93,7 @@ export default function Portofolio() {
   return (
     <section
       id="Portofolio"
-      className="w-full bg-[#EAE8E4] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300"
+      className="w-full bg-[#F5F4F2] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300"
     >
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Section Header */}
@@ -283,7 +283,7 @@ export default function Portofolio() {
                   data-aos="fade-up"
                   data-aos-duration="600"
                   data-aos-delay={index * 50}
-                  className="p-4 bg-[#EAE8E4] border border-black hover:scale-[1.03] flex flex-col items-center justify-center text-center group transition-all duration-300"
+                  className="p-4 bg-[#E1E0DD] border border-black hover:scale-[1.03] flex flex-col items-center justify-center text-center group transition-all duration-300"
                 >
                   <TechStackIcon TechStackIcon={stack.icon} Language={stack.language} />
                 </div>
