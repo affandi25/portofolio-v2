@@ -54,22 +54,22 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <section id="About" className="w-full bg-[#EAE8E4] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300">
+    <section id="About" className="w-full bg-[#D6D3CD] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-400/40 transition-colors duration-300">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Editorial Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-300 pb-6 mb-16 gap-4" data-aos="fade-up" data-aos-duration="700">
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-400/50 pb-6 mb-16 gap-4" data-aos="fade-up" data-aos-duration="700">
           <div>
-            <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase font-semibold block mb-1">
+            <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-600 uppercase font-semibold block mb-1">
               01 // BIOGRAPHY
             </span>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tighter text-black uppercase mt-1">
               About Me
             </h2>
-            <p className="text-sm sm:text-base text-neutral-600 mt-2 font-light">
+            <p className="text-sm sm:text-base text-neutral-700 mt-2 font-light">
               Transforming ideas into digital experiences
             </p>
           </div>
-          <span className="text-xs font-mono tracking-widest text-neutral-500 uppercase">
+          <span className="text-xs font-mono tracking-widest text-neutral-600 uppercase">
             SEMARANG, CENTRAL JAVA • ID
           </span>
         </div>
@@ -79,24 +79,24 @@ const AboutPage = () => {
           {/* Left Column: Bio Narrative */}
           <div className="lg:col-span-7 space-y-6" data-aos="fade-right" data-aos-duration="800">
             <div>
-              <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase font-semibold">
+              <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-600 uppercase font-semibold">
                 BIOGRAPHY
               </span>
               <h3 className="text-3xl sm:text-4xl font-black tracking-tight text-black mt-1">
                 Muhammad Yusuf Affandi
               </h3>
-              <p className="text-sm font-mono text-neutral-600 mt-1 uppercase tracking-wider">
+              <p className="text-sm font-mono text-neutral-700 mt-1 uppercase tracking-wider">
                 Informatics Student • Universitas PGRI Semarang
               </p>
             </div>
 
-            <p className="text-base sm:text-lg text-neutral-700 leading-relaxed font-normal text-justify sm:text-left">
+            <p className="text-base sm:text-lg text-neutral-800 leading-relaxed font-normal text-justify sm:text-left">
               Saya adalah mahasiswa Teknik Informatika dari Universitas PGRI SEMARANG yang sedang berproses mendalami dunia web development dan pengembangan IoT. Berbekal rasa ingin tahu yang tinggi, saya memanfaatkan bantuan AI sebagai sarana kolaborasi dalam mengeksplorasi dan membangun berbagai proyek digital.
             </p>
 
             {/* Editorial Quote Box */}
-            <div className="p-6 bg-white border border-neutral-300 rounded-none shadow-sm relative">
-              <div className="text-[10px] font-mono tracking-[0.2em] text-neutral-400 uppercase mb-2">
+            <div className="p-6 bg-white/95 border border-neutral-400/40 rounded-none shadow-sm relative">
+              <div className="text-[10px] font-mono tracking-[0.2em] text-neutral-500 uppercase mb-2">
                 CORE PHILOSOPHY
               </div>
               <blockquote className="text-base sm:text-lg font-semibold text-black italic leading-snug">
@@ -126,7 +126,7 @@ const AboutPage = () => {
 
           {/* Right Column: Profile Image in Minimalist Studio Frame */}
           <div className="lg:col-span-5 flex justify-center" data-aos="fade-left" data-aos-duration="800">
-            <div className="relative w-full max-w-md bg-white p-3 border border-neutral-300 shadow-md">
+            <div className="relative w-full max-w-md bg-white p-3 border border-neutral-400/40 shadow-md">
               <div className="relative overflow-hidden aspect-[4/5] bg-neutral-100">
                 <img
                   src="/profilku.jpeg"
@@ -146,77 +146,77 @@ const AboutPage = () => {
         </div>
 
         {/* 3 Metric Cards (Real Supabase & Dynamic Calculation) */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-12 border-t border-neutral-300">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16 pt-12 border-t border-neutral-400/40">
           {/* Metric 1 */}
           <div
-            className="p-6 bg-white border border-neutral-300 flex flex-col justify-between group hover:border-black transition-colors"
+            className="p-6 bg-white/95 border border-neutral-400/40 flex flex-col justify-between group hover:border-black transition-colors"
             data-aos="fade-up"
             data-aos-duration="700"
           >
             <div className="flex justify-between items-start">
-              <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-400 uppercase">METRIC 01</span>
-              <Code2 className="w-5 h-5 text-neutral-500" />
+              <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase">METRIC 01</span>
+              <Code2 className="w-5 h-5 text-neutral-600" />
             </div>
             <div className="my-6">
               <span className="text-5xl font-black tracking-tight text-black">{totalProjects}</span>
               <h4 className="text-sm font-bold uppercase tracking-wider text-black mt-1">TOTAL PROJECTS</h4>
-              <p className="text-xs text-neutral-500 mt-1">Web applications crafted and deployed</p>
+              <p className="text-xs text-neutral-600 mt-1">Web applications crafted and deployed</p>
             </div>
-            <div className="pt-3 border-t border-neutral-100 text-[11px] font-mono text-neutral-400 uppercase">
+            <div className="pt-3 border-t border-neutral-200 text-[11px] font-mono text-neutral-500 uppercase">
               UPDATED LIVE FROM SUPABASE
             </div>
           </div>
 
           {/* Metric 2 */}
           <div
-            className="p-6 bg-white border border-neutral-300 flex flex-col justify-between group hover:border-black transition-colors"
+            className="p-6 bg-white/95 border border-neutral-400/40 flex flex-col justify-between group hover:border-black transition-colors"
             data-aos="fade-up"
             data-aos-duration="700"
             data-aos-delay="150"
           >
             <div className="flex justify-between items-start">
-              <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-400 uppercase">METRIC 02</span>
-              <Award className="w-5 h-5 text-neutral-500" />
+              <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase">METRIC 02</span>
+              <Award className="w-5 h-5 text-neutral-600" />
             </div>
             <div className="my-6">
               <span className="text-5xl font-black tracking-tight text-black">{totalCertificates}</span>
               <h4 className="text-sm font-bold uppercase tracking-wider text-black mt-1">CERTIFICATES</h4>
-              <p className="text-xs text-neutral-500 mt-1">Validated courses & tech credentials</p>
+              <p className="text-xs text-neutral-600 mt-1">Validated courses & tech credentials</p>
             </div>
-            <div className="pt-3 border-t border-neutral-100 text-[11px] font-mono text-neutral-400 uppercase">
+            <div className="pt-3 border-t border-neutral-200 text-[11px] font-mono text-neutral-500 uppercase">
               VERIFIED CREDENTIALS
             </div>
           </div>
 
           {/* Metric 3 */}
           <div
-            className="p-6 bg-white border border-neutral-300 flex flex-col justify-between group hover:border-black transition-colors"
+            className="p-6 bg-white/95 border border-neutral-400/40 flex flex-col justify-between group hover:border-black transition-colors"
             data-aos="fade-up"
             data-aos-duration="700"
             data-aos-delay="300"
           >
             <div className="flex justify-between items-start">
-              <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-400 uppercase">METRIC 03</span>
-              <GraduationCap className="w-5 h-5 text-neutral-500" />
+              <span className="text-[11px] font-mono tracking-[0.25em] text-neutral-500 uppercase">METRIC 03</span>
+              <GraduationCap className="w-5 h-5 text-neutral-600" />
             </div>
             <div className="my-6">
               <span className="text-5xl font-black tracking-tight text-black">SEM. {currentSemester}</span>
               <h4 className="text-sm font-bold uppercase tracking-wider text-black mt-1">INFORMATICS ENG.</h4>
-              <p className="text-xs text-neutral-500 mt-1">Active student at Universitas PGRI Semarang</p>
+              <p className="text-xs text-neutral-600 mt-1">Active student at Universitas PGRI Semarang</p>
             </div>
-            <div className="pt-3 border-t border-neutral-100 text-[11px] font-mono text-neutral-400 uppercase">
+            <div className="pt-3 border-t border-neutral-200 text-[11px] font-mono text-neutral-500 uppercase">
               STARTED SEPT 17, 2024
             </div>
           </div>
         </div>
 
         {/* 4 HALLMARKS STRIP (PERSIS SEPERTI "FAST DELIVERY / EASY RETURNS" PADA GAZU) */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16 pt-12 border-t border-neutral-300">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-16 pt-12 border-t border-neutral-400/40">
           <div className="flex items-start gap-3.5">
             <Code2 className="w-6 h-6 text-black flex-shrink-0 mt-0.5" />
             <div>
               <h5 className="text-xs font-bold tracking-wider uppercase text-black">MODERN STACK</h5>
-              <p className="text-[11px] text-neutral-500 mt-0.5 leading-snug">React, JavaScript, Node.js & Tailwind</p>
+              <p className="text-[11px] text-neutral-600 mt-0.5 leading-snug">React, JavaScript, Node.js & Tailwind</p>
             </div>
           </div>
 
@@ -224,7 +224,7 @@ const AboutPage = () => {
             <Cpu className="w-6 h-6 text-black flex-shrink-0 mt-0.5" />
             <div>
               <h5 className="text-xs font-bold tracking-wider uppercase text-black">IOT EXPLORATION</h5>
-              <p className="text-[11px] text-neutral-500 mt-0.5 leading-snug">Hardware & sensor telemetry</p>
+              <p className="text-[11px] text-neutral-600 mt-0.5 leading-snug">Hardware & sensor telemetry</p>
             </div>
           </div>
 
@@ -232,7 +232,7 @@ const AboutPage = () => {
             <Sparkles className="w-6 h-6 text-black flex-shrink-0 mt-0.5" />
             <div>
               <h5 className="text-xs font-bold tracking-wider uppercase text-black">AI AS TOOL</h5>
-              <p className="text-[11px] text-neutral-500 mt-0.5 leading-snug">High velocity pair-programming</p>
+              <p className="text-[11px] text-neutral-600 mt-0.5 leading-snug">High velocity pair-programming</p>
             </div>
           </div>
 
@@ -240,7 +240,7 @@ const AboutPage = () => {
             <CheckCircle2 className="w-6 h-6 text-black flex-shrink-0 mt-0.5" />
             <div>
               <h5 className="text-xs font-bold tracking-wider uppercase text-black">QUALITY ASSURED</h5>
-              <p className="text-[11px] text-neutral-500 mt-0.5 leading-snug">Clean code & responsive UI</p>
+              <p className="text-[11px] text-neutral-600 mt-0.5 leading-snug">Clean code & responsive UI</p>
             </div>
           </div>
         </div>
