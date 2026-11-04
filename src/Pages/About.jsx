@@ -96,8 +96,9 @@ const AboutPage = () => {
             {/* Actions: Download CV */}
             <div className="pt-4 flex flex-wrap gap-4">
               <a
-                href="/cv.pdf"
-                download="CV_Muhammad_Yusuf_Affandi.pdf"
+                href="https://drive.google.com/file/d/13GlZ0PtFPCKs4qERz_W5Dkb8biGq7Si8/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 py-3.5 bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-bold tracking-[0.2em] uppercase"
               >
                 <FileText className="w-4 h-4" />
