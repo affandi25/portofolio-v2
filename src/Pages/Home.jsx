@@ -113,7 +113,7 @@ const Home = () => {
           >
             <div className="relative group">
               <img
-                src="/yusuf.png"
+                src="/hero_baru.webp"
                 alt="Muhammad Yusuf Affandi"
                 className="h-[420px] sm:h-[540px] lg:h-[660px] w-auto object-contain transform transition-transform duration-700 group-hover:scale-[1.02]"
                 decoding="async"
