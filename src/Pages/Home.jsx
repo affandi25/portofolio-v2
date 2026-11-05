@@ -57,6 +57,7 @@ const Home = () => {
       {/* HERO SECTION (GAZU EDITORIAL COMPOSITION) */}
       <section
         id="Home"
+        style={{ backgroundColor: "#eae8e3" }}
         className="relative w-full min-h-[92vh] sm:min-h-screen bg-[#eae8e3] pt-24 sm:pt-28 pb-12 flex flex-col justify-between overflow-hidden"
       >
         {/* Editorial Top Info Row */}
@@ -99,8 +100,8 @@ const Home = () => {
             data-aos="zoom-out"
             data-aos-duration="1000"
           >
-            <h1 className="text-[25vw] sm:text-[23vw] font-black tracking-tighter text-[#141414] leading-none uppercase text-center opacity-95">
-              YUSUF
+            <h1 className="text-[10vw] sm:text-[20vw] font-black tracking-tighter text-[#141414] leading-none uppercase text-center opacity-95">
+              Fandi
             </h1>
           </div>
 
@@ -112,9 +113,10 @@ const Home = () => {
           >
             <div className="relative group">
               <img
-                src="/hero-yusuf.png"
+                src="/yusuf.png"
                 alt="Muhammad Yusuf Affandi"
-                className="h-[420px] sm:h-[540px] lg:h-[660px] w-auto object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.15)] transform transition-transform duration-700 group-hover:scale-[1.02]"
+                className="h-[420px] sm:h-[540px] lg:h-[660px] w-auto object-contain transform transition-transform duration-700 group-hover:scale-[1.02]"
+                decoding="async"
               />
               {/* Studio Ground Shadow */}
               <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-[70%] h-5 bg-black/25 rounded-[100%] blur-md pointer-events-none"></div>

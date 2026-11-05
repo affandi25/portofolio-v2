@@ -91,10 +91,7 @@ export default function Portofolio() {
     : certificates.slice(0, initialItems);
 
   return (
-    <section
-      id="Portofolio"
-      className="w-full bg-[#fbf9f5] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300"
-    >
+    <section id="Portofolio" style={{ backgroundColor: "#fbf9f5" }} className="relative z-10 w-full bg-[#fbf9f5] text-[#0D0D0D] py-20 sm:py-28 border-t-2 border-black">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between border-b border-neutral-300 pb-6 mb-12 gap-6" data-aos="fade-up" data-aos-duration="700">

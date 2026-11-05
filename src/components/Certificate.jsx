@@ -95,6 +95,8 @@ const Certificate = ({ ImgSertif }) => {
 							className="certificate-image"
 							src={ImgSertif}
 							alt={fileName || "Certificate"}
+							loading="lazy"
+							decoding="async"
 							style={{
 								width: "100%",
 								height: "auto",

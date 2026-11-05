@@ -76,7 +76,7 @@ const ProjectPageLayout = () => (
 function App() {
   React.useEffect(() => {
     AOS.init({
-      once: false,
+      once: true,
       offset: 40,
       duration: 600,
       easing: "ease-out-cubic",
@@ -89,7 +89,7 @@ function App() {
 
   return (
     <HelmetProvider>
-      <div className="pointer-events-none">
+      <div className="pointer-events-none -z-10 relative">
         <AnimatedBackground />
       </div>
       <BrowserRouter>

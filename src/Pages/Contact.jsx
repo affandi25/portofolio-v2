@@ -46,7 +46,7 @@ const ContactPage = () => {
   };
 
   return (
-    <section id="Contact" className="w-full bg-[#fbf9f5] text-[#0D0D0D] py-20 sm:py-28 border-t border-neutral-300">
+    <section id="Contact" style={{ backgroundColor: "#fbf9f5" }} className="relative z-10 w-full bg-[#fbf9f5] text-[#0D0D0D] py-20 sm:py-28 border-t-2 border-black">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-12">
         {/* Editorial Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-300 pb-6 mb-16 gap-4" data-aos="fade-up" data-aos-duration="700">
@@ -108,7 +108,7 @@ const ContactPage = () => {
                     value={formData.name}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full py-3 pl-10 pr-4 bg-[#fbf9f5] border border-neutral-300 text-black text-sm placeholder-neutral-400 focus:outline-none focus:border-black transition-colors"
+                    className="w-full py-3 pl-10 pr-4 bg-white border border-neutral-300 text-black text-sm placeholder-neutral-400 focus:outline-none focus:border-black transition-colors"
                     required
                   />
                 </div>
@@ -127,7 +127,7 @@ const ContactPage = () => {
                     value={formData.email}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full py-3 pl-10 pr-4 bg-[#fbf9f5] border border-neutral-300 text-black text-sm placeholder-neutral-400 focus:outline-none focus:border-black transition-colors"
+                    className="w-full py-3 pl-10 pr-4 bg-white border border-neutral-300 text-black text-sm placeholder-neutral-400 focus:outline-none focus:border-black transition-colors"
                     required
                   />
                 </div>
@@ -146,7 +146,7 @@ const ContactPage = () => {
                     onChange={handleChange}
                     disabled={isSubmitting}
                     rows={4}
-                    className="w-full py-3 pl-10 pr-4 bg-[#fbf9f5] border border-neutral-300 text-black text-sm placeholder-neutral-400 focus:outline-none focus:border-black transition-colors resize-none"
+                    className="w-full py-3 pl-10 pr-4 bg-white border border-neutral-300 text-black text-sm placeholder-neutral-400 focus:outline-none focus:border-black transition-colors resize-none"
                     required
                   />
                 </div>

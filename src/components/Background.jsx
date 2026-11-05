@@ -2,7 +2,7 @@ import React from "react";
 
 const AnimatedBackground = () => {
 	return (
-		<div className="fixed inset-0 pointer-events-none z-0">
+		<div className="fixed inset-0 pointer-events-none -z-10 [transform:translateZ(0)]">
 			{/* Very subtle studio background grid & soft radial vignette */}
 			<div className="absolute inset-0 bg-[#eae8e3]"></div>
 			<div className="absolute inset-0 studio-grid opacity-60"></div>
