@@ -100,7 +100,7 @@ const Home = () => {
             data-aos="zoom-out"
             data-aos-duration="1000"
           >
-            <h1 className="text-[20vw] sm:text-[20vw] font-black tracking-tighter text-[#141414] leading-none uppercase text-center opacity-95">
+            <h1 className="text-[23vw] sm:text-[20vw] font-black tracking-tighter text-[#141414] leading-none uppercase text-center opacity-95">
               Fandi
             </h1>
           </div>
