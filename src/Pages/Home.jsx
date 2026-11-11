@@ -7,7 +7,7 @@ import "aos/dist/aos.css";
 const TYPING_SPEED = 100;
 const ERASING_SPEED = 50;
 const PAUSE_DURATION = 2000;
-const WORDS = ["Web & IoT Explorer", "Vibe Coding", "Frontend Developer"];
+const WORDS = ["Web design & UI/UX design", "Vibe Coding", "Frontend Developer"];
 
 const Home = () => {
   const [text, setText] = useState("");

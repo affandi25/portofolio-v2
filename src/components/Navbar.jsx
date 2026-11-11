@@ -91,7 +91,7 @@ const Navbar = () => {
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
             AVAILABLE FOR PROJECTS
           </span>
-          <span>SEMARANG, ID (UTC+7)</span>
+          <span>SEMARANG, Jawa Tengah</span>
         </div>
       </div>
 
@@ -214,7 +214,7 @@ const Navbar = () => {
               </a>
             </div>
             <a
-              href="https://drive.google.com/file/d/13GlZ0PtFPCKs4qERz_W5Dkb8biGq7Si8/view?usp=sharing"
+              href="https://drive.google.com/file/d/1sNcIsA0YS-wexy4_WYdpuNXPpLqIiFoK/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="block w-full py-3 text-center bg-black text-white font-semibold text-xs tracking-widest uppercase"

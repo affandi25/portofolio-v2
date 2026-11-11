@@ -85,7 +85,7 @@ const AboutPage = () => {
               </div>
 
               <p className="text-base sm:text-lg text-neutral-700 leading-relaxed font-normal text-justify sm:text-left">
-                Saya adalah mahasiswa Teknik Informatika dari Universitas PGRI SEMARANG yang sedang berproses mendalami dunia web development dan pengembangan IoT. Berbekal rasa ingin tahu yang tinggi, saya memanfaatkan bantuan AI sebagai sarana kolaborasi dalam mengeksplorasi dan membangun berbagai proyek digital.
+                Saya adalah mahasiswa Teknik Informatika dari Universitas PGRI SEMARANG yang sedang berproses mendalami dunia web development dan tertarik dengan pengembangan IoT serta UI/UX design. Berbekal rasa ingin tahu yang tinggi, saya memanfaatkan bantuan AI sebagai sarana kolaborasi dalam mengeksplorasi dan membangun berbagai proyek digital.
               </p>
 
               {/* Editorial Quote Box */}
@@ -101,7 +101,7 @@ const AboutPage = () => {
               {/* Actions: Download CV */}
               <div className="pt-4 flex flex-wrap gap-4">
                 <a
-                  href="https://drive.google.com/file/d/13GlZ0PtFPCKs4qERz_W5Dkb8biGq7Si8/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1sNcIsA0YS-wexy4_WYdpuNXPpLqIiFoK/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-3 px-6 py-3.5 bg-black text-white hover:bg-neutral-800 transition-colors text-xs font-bold tracking-[0.2em] uppercase"
