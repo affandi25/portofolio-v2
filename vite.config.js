@@ -4,9 +4,7 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), '')
-  for (const [key, value] of Object.entries(env)) {
-    if (!(key in process.env)) process.env[key] = value
-  }
+  Object.assign(process.env, env)
 
   return {
     plugins: [
@@ -17,6 +15,9 @@ export default defineConfig(({ mode }) => {
         configureServer(server) {
           server.middlewares.use('/api/chat', async (req, res) => {
             try {
+              const currentEnv = loadEnv(mode, process.cwd(), '')
+              Object.assign(process.env, currentEnv)
+
               const { default: handler } = await server.ssrLoadModule('/api/chat.js')
               const chunks = []
               for await (const chunk of req) chunks.push(chunk)
