@@ -35,4 +35,10 @@ export default [
       ],
     },
   },
+  {
+    files: ['api/**/*.js', 'vite.config.js', 'eslint.config.js'],
+    languageOptions: {
+      globals: { ...globals.node },
+    },
+  },
 ]
