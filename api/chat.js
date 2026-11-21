@@ -1,7 +1,7 @@
 export const config = { runtime: "edge" };
 
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
-const MODEL = process.env.AI_MODEL || "llama-3.3-70b-versatile";
+const MODEL = process.env.AI_MODEL || "openai/gpt-oss-120b";
 const MAX_MESSAGES = 12;
 const MAX_CHARS = 2000;
 
@@ -144,12 +144,14 @@ export default async function handler(req) {
   }
 
   if (!upstream.ok) {
+    const errData = await upstream.json().catch(() => null);
+    console.error("[Groq Error]", upstream.status, errData);
     const message =
       upstream.status === 429
         ? "Asisten sedang sibuk. Coba lagi sebentar."
         : upstream.status === 401 || upstream.status === 403
           ? "Konfigurasi API key bermasalah."
-          : "Asisten gagal menjawab. Coba lagi.";
+          : errData?.error?.message || "Asisten gagal menjawab. Coba lagi.";
     return json({ error: message }, 502);
   }
 
