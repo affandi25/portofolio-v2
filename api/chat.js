@@ -1,7 +1,7 @@
 export const config = { runtime: "edge" };
 
 const GROQ_URL = "https://api.groq.com/openai/v1/chat/completions";
-const MODEL = process.env.AI_MODEL || "openai/gpt-oss-120b";
+const MODEL = "openai/gpt-oss-120b";
 const MAX_MESSAGES = 12;
 const MAX_CHARS = 2000;
 
